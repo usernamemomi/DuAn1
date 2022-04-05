@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
             ((TextView) cell).setBackgroundColor(Color.rgb(255, 204, 51));
             ((TextView) cell).setBackgroundResource(R.drawable.rounded_button);
             ((TextView) cell).setTextColor(Color.rgb(51, 51, 51));
+            ///ad
 
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH) + 1;

@@ -34,12 +34,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
     private Timer timer;
     private List<Note> notesSource;
 
+
     public NotesAdapter(List<Note> notes, NotesListener notesListener) {
         this.notes = notes;
         this.notesListener = notesListener;
         notesSource = notes;
     }
-
+    ///ad
     @NonNull
     @Override
     public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

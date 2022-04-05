@@ -27,6 +27,7 @@ public class CalendarAdapter extends ArrayAdapter<Date> {
         this.eventDays = eventDays;
         inflater = LayoutInflater.from(context);
     }
+    //
 //
     @Override
     public View getView(int position, View view, ViewGroup parent) {
