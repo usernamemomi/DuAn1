@@ -37,7 +37,7 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // make the activity on full screen
+        // thực hiện hoạt động trên toàn màn hình
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -59,18 +59,18 @@ public class IntroActivity extends AppCompatActivity {
         tabIndicator = findViewById(R.id.tab_indicator);
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.btn_animation);
         tvSkip = findViewById(R.id.tv_skip);
-        // fill list screen
+        // điền vào màn hình danh sách
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Thêm sự kiện","Nhấn \"+\" để thêm sự kiện hay ghi chú, ghi chép mọi thứ bạn muốn với vài điểm chạm",R.drawable.img1));
         mList.add(new ScreenItem("Danh sách sự kiện","Vuốt sự kiện từ trái để quen lí dễ dàng hơn",R.drawable.img2));
         mList.add(new ScreenItem("Giao diện thân thiện","Dễ dàng sử dụng",R.drawable.img3));
 
-        // setup viewpager
+        // thiết lập máy xem
         screenPager =findViewById(R.id.screen_viewpager);
         introViewPagerAdapter = new IntroViewPagerAdapter(this,mList);
         screenPager.setAdapter(introViewPagerAdapter);
 
-        // setup tablayout with viewpager
+        // thiết lập tablayout với viewpager
 
         tabIndicator.setupWithViewPager(screenPager);
 
@@ -93,7 +93,7 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
 
-        // tablayout add change listener
+        // tablayout thêm thay đổi người nghe
         tabIndicator.addOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -110,7 +110,7 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
 
-        // Get Started button click listener
+        // Nút Bắt đầu
 
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +127,7 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
 
-        // skip button click listener
+        // nút bỏ qua
 
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,7 +150,7 @@ public class IntroActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    // show the GETSTARTED Button and hide the indicator and the next button
+    // hiển thị Nút BẮT ĐẦU và ẩn chỉ báo và nút tiếp theo
     private void loaddLastScreen() {
         btnNext.setVisibility(View.INVISIBLE);
         btnGetStarted.setVisibility(View.VISIBLE);

@@ -14,7 +14,7 @@ public class AlertReceiver extends BroadcastReceiver {
     private static final String EXTRA_NOTE_ID = "id";
     private static final String EXTRA_NOTE_TITLE = "title";
     private static final String EXTRA_MESSAGE = "message";
-
+    // thong bao
     @Override
     public void onReceive(Context context, Intent intent) {
         String id = intent.getStringExtra(EXTRA_NOTE_ID);
@@ -23,7 +23,7 @@ public class AlertReceiver extends BroadcastReceiver {
         NotificationHelper notificationHelper = new NotificationHelper(context,id,title);
         NotificationCompat.Builder nb = notificationHelper
                 .getChannelNotification(id,
-                        "You have an alarm note: " + title
+                        "Bạn có 1 thông báo: " + title
                         ,message);
 
         notificationHelper.getManager().notify(Integer.parseInt(id), nb.build());
